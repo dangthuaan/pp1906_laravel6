@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/shop', function () {
     return view('shop_home');
 });
+
+Route::get('shop/store', 'StoreController@index')->name('products.product_store');
+
+Route::get('shop/store/products/{product}', 'ProductController@show')
+    ->name('products.product_details');
