@@ -25,5 +25,9 @@ Route::get('/shop', function () {
 
 Route::get('shop/store', 'StoreController@index')->name('products.product_store');
 
-Route::get('shop/store/products/{product}', 'ProductController@show')
+Route::get('shop/store/product/{product}', 'ProductController@show')
     ->name('products.product_details');
+
+Route::get('shop/store/create-product', 'ProductController@create');
+
+Route::post('shop/store/store-product', 'ProductController@store');

@@ -1,6 +1,12 @@
 @extends('layouts.shop')
 
 @section('content')
+
+<h1>Product show page</h1>
+<h3>Book id: {{ $product->book_id }}</h3>
+<h3>Book title: {{ $product->book_title }}</h3>
+<h3></h3>
+
 <body class="product-details">
 <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -16,11 +22,11 @@
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<div class="language-area">
 						<ul>
-							<li><img src="img/flag/1.jpg" alt="flag" /><a href="#">English<i class="fa fa-angle-down"></i></a>
+							<li><img src="/theme/img/flag/1.jpg" alt="flag" /><a href="#">English<i class="fa fa-angle-down"></i></a>
 								<div class="header-sub">
 									<ul>
-										<li><a href="#"><img src="img/flag/2.jpg" alt="flag" />france</a></li>
-										<li><a href="#"><img src="img/flag/3.jpg" alt="flag" />croatia</a></li>
+										<li><a href="#"><img src="/theme/img/flag/2.jpg" alt="flag" />france</a></li>
+										<li><a href="#"><img src="/theme/img/flag/3.jpg" alt="flag" />croatia</a></li>
 									</ul>
 								</div>
 							</li>
@@ -62,7 +68,7 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
 					<div class="logo-area text-center logo-xs-mrg">
-						<a href="index.html"><img src="img/logo/logo.png" alt="logo" /></a>
+						<a href="index.html"><img src="/theme/img/logo/logo.png" alt="logo" /></a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -74,7 +80,7 @@
 									<div class="cart-product">
 										<div class="single-cart">
 											<div class="cart-img">
-												<a href="#"><img src="img/product/1.jpg" alt="book" /></a>
+												<a href="#"><img src="/theme/img/product/1.jpg" alt="book" /></a>
 											</div>
 											<div class="cart-info">
 												<h5><a href="#">Joust Duffle Bag</a></h5>
@@ -86,7 +92,7 @@
 										</div>
 										<div class="single-cart">
 											<div class="cart-img">
-												<a href="#"><img src="img/product/3.jpg" alt="book" /></a>
+												<a href="#"><img src="/theme/img/product/3.jpg" alt="book" /></a>
 											</div>
 											<div class="cart-info">
 												<h5><a href="#">Chaz Kangeroo Hoodie</a></h5>
@@ -398,17 +404,17 @@
 						<div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
 							<div class="flexslider">
 								<ul class="slides">
-									<li data-thumb="img/thum-2/1.jpg">
-									  <img src="img/flex/1.jpg" alt="woman" />
+									<li data-thumb="/theme/img/thum-2/1.jpg">
+									  <img src="/theme/img/flex/1.jpg" alt="woman" />
 									</li>
-									<li data-thumb="img/thum-2/4.jpg">
-									  <img src="img/flex/5.jpg" alt="woman" />
+									<li data-thumb="/theme/img/thum-2/4.jpg">
+									  <img src="/theme/img/flex/5.jpg" alt="woman" />
 									</li>
-									<li data-thumb="img/thum-2/2.jpg">
-									  <img src="img/flex/2.jpg" alt="woman" />
+									<li data-thumb="/theme/img/thum-2/2.jpg">
+									  <img src="/theme/img/flex/2.jpg" alt="woman" />
 									</li>
-									<li data-thumb="img/thum-2/5.jpg">
-									  <img src="img/flex/5.jpg" alt="woman" />
+									<li data-thumb="/theme/img/thum-2/5.jpg">
+									  <img src="/theme/img/flex/5.jpg" alt="woman" />
 									</li>
 								</ul>
 							</div>
@@ -616,7 +622,7 @@
 						<div class="product-wrapper">
 							<div class="product-img">
 								<a href="#">
-									<img src="img/product/1.jpg" alt="book" class="primary" />
+									<img src="/theme/img/product/1.jpg" alt="book" class="primary" />
 								</a>
 								<div class="quick-view">
                                     <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -663,7 +669,7 @@
 						<div class="product-wrapper">
 							<div class="product-img">
 								<a href="#">
-									<img src="img/product/3.jpg" alt="book" class="primary" />
+									<img src="/theme/img/product/3.jpg" alt="book" class="primary" />
 								</a>
 								<div class="quick-view">
                                     <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -709,7 +715,7 @@
 						<div class="product-wrapper">
 							<div class="product-img">
 								<a href="#">
-									<img src="img/product/5.jpg" alt="book" class="primary" />
+									<img src="/theme/img/product/5.jpg" alt="book" class="primary" />
 								</a>
 								<div class="quick-view">
                                     <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -755,7 +761,7 @@
 						<div class="product-wrapper">
 							<div class="product-img">
 								<a href="#">
-									<img src="img/product/7.jpg" alt="book" class="primary" />
+									<img src="/theme/img/product/7.jpg" alt="book" class="primary" />
 								</a>
 								<div class="quick-view">
                                     <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -813,7 +819,7 @@
 							<div class="product-total-2">
 								<div class="single-most-product bd mb-18">
 									<div class="most-product-img">
-										<a href="#"><img src="img/product/20.jpg" alt="book" /></a>
+										<a href="#"><img src="/theme/img/product/20.jpg" alt="book" /></a>
 									</div>
 									<div class="most-product-content">
 										<div class="product-rating">
@@ -836,7 +842,7 @@
 								</div>
 								<div class="single-most-product bd mb-18">
 									<div class="most-product-img">
-										<a href="#"><img src="img/product/21.jpg" alt="book" /></a>
+										<a href="#"><img src="/theme/img/product/21.jpg" alt="book" /></a>
 									</div>
 									<div class="most-product-content">
 										<div class="product-rating">
@@ -859,7 +865,7 @@
 								</div>
 								<div class="single-most-product">
 									<div class="most-product-img">
-										<a href="#"><img src="img/product/22.jpg" alt="book" /></a>
+										<a href="#"><img src="/theme/img/product/22.jpg" alt="book" /></a>
 									</div>
 									<div class="most-product-content">
 										<div class="product-rating">
@@ -883,7 +889,7 @@
 							<div class="product-total-2">
 								<div class="single-most-product bd mb-18">
 									<div class="most-product-img">
-										<a href="#"><img src="img/product/23.jpg" alt="book" /></a>
+										<a href="#"><img src="/theme/img/product/23.jpg" alt="book" /></a>
 									</div>
 									<div class="most-product-content">
 										<div class="product-rating">
@@ -906,7 +912,7 @@
 								</div>
 								<div class="single-most-product bd mb-18">
 									<div class="most-product-img">
-										<a href="#"><img src="img/product/24.jpg" alt="book" /></a>
+										<a href="#"><img src="/theme/img/product/24.jpg" alt="book" /></a>
 									</div>
 									<div class="most-product-content">
 										<div class="product-rating">
@@ -929,7 +935,7 @@
 								</div>
 								<div class="single-most-product">
 									<div class="most-product-img">
-										<a href="#"><img src="img/product/22.jpg" alt="book" /></a>
+										<a href="#"><img src="/theme/img/product/22.jpg" alt="book" /></a>
 									</div>
 									<div class="most-product-content">
 										<div class="product-rating">
@@ -954,7 +960,7 @@
 					</div>
 					<div class="banner-area mb-30">
 						<div class="banner-img-2">
-							<a href="#"><img src="img/banner/33.jpg" alt="banner" /></a>
+							<a href="#"><img src="/theme/img/banner/33.jpg" alt="banner" /></a>
 						</div>
 					</div>
 					<div class="left-title-2 mb-30">
