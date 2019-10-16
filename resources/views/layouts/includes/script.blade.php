@@ -23,5 +23,7 @@
 <script src="/theme/js/waypoints.min.js"></script>
 <!-- plugins js -->
 <script src="/theme/js/plugins.js"></script>
+<!-- jquery ui-->
+<script src="/theme/js/jquery-ui.min.js"></script>
 <!-- main js -->
 <script src="/theme/js/main.js"></script>

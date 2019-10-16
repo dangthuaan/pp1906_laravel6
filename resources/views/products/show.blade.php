@@ -3,8 +3,14 @@
 @section('content')
 
 <h1>Product show page</h1>
-<h3>Book id: {{ $product->book_id }}</h3>
-<h3>Book title: {{ $product->book_title }}</h3>
+<h3>Book id: {{ $product->id }}</h3>
+<h3>Book title: {{ $product->title }}</h3>
+<h3>Book author: {{ $product->author }}</h3>
+<h3>Book publisher: {{ $product->publisher }}</h3>
+<h3>Book publish date: {{ $product->publish_date }}</h3>
+<h3>Book language: {{ $product->language }}</h3>
+<h3>Book price: {{ $product->price }}</h3>
+
 <h3></h3>
 
 <body class="product-details">

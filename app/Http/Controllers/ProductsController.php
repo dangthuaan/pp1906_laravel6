@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductCreateRequest;
+use App\Models\Product;
+use Exception;
 
-class StoreController extends Controller
+
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +26,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+       return view('products.create');
     }
 
     /**
@@ -32,11 +35,27 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductCreateRequest $request)
     {
-        //
-    }
+        $data = $request->only([
+            'title',
+            'author',
+            'publisher',
+            'publish_date',
+            'language',
+            'price',
+        ]);
 
+
+        try {
+            $product = Product::create($data);
+        } catch (Exception $e) {
+            return back()->with('status', 'Create failed!');
+        }
+        return redirect('shop/products/' . $product->id)->with('status', 'Create success!');
+        dd();
+    }
+    
     /**
      * Display the specified resource.
      *

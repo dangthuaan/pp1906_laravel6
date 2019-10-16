@@ -4943,8 +4943,7 @@ nav.menu .cr-dropdown ul {
     margin-bottom: 15px;
     overflow: hidden;
 }
-.single-register form {}
-.single-register form label,
+.single-register {}
 .single-register label {
     color: #333;
     display: block;
@@ -4954,7 +4953,7 @@ nav.menu .cr-dropdown ul {
     font-family: 'Rufina', serif;
     font-weight: 400;
 }
-.single-register form input {
+.single-register input {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: 1px solid #eceff8;
     box-shadow: none;

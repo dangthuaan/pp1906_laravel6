@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
-        'book_title' => $faker->sentence(3)
+        //'book_title' => $faker->sentence(3)
     ];
 });

@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public $primaryKey = 'book_id';
-    //protected $fillable = [ 'book_title', ];
+    protected $fillable = ['title', 'author', 'publisher', 'publish_date', 'language', 'price'];
+
+    protected $casts = [
+    'publish_date' => 'date:yyyy-mm-dd'
+	];
 
 }

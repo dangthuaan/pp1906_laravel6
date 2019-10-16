@@ -23,11 +23,10 @@ Route::get('/shop', function () {
     return view('shop_home');
 });
 
-Route::get('shop/store', 'StoreController@index')->name('products.product_store');
+Route::get('shop/products', 'ProductsController@index')->name('products.index');
 
-Route::get('shop/store/product/{product}', 'ProductController@show')
-    ->name('products.product_details');
+Route::get('shop/products/create', 'ProductsController@create')->name('products.create');
 
-Route::get('shop/store/create-product', 'ProductController@create');
+Route::post('shop/products', 'ProductsController@store')->name('products.store');
 
-Route::post('shop/store/store-product', 'ProductController@store');
+Route::get('shop/products/{product}', 'ProductsController@show')->name('products.show');
