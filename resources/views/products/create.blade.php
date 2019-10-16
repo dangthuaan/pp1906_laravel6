@@ -1,9 +1,9 @@
 @extends('layouts.shop')
 
 @section('content')
-@if ($message = Session::get('success'))
+@if (session('status'))
 	<div class="alert alert-success">
-	   <strong>{{ $message }}</strong>
+	   <strong>{{ $session }}</strong>
 	</div>
 	<br>
 	<br>
@@ -75,9 +75,9 @@
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="single-register">
-										<label>{{ __('Publisher Date') }}<span>*</span></label>
-										<input type="text" id="datepicker" class="@error('publisher_date') is-invalid @enderror" name="publisher_date" value="{{ old('publisher_date') }}" required autocomplete="publisher_date" autofocus>
-										@error('publisher_date')
+										<label>{{ __('Publish Date') }}<span>*</span></label>
+										<input type="text" class="@error('publish_date') is-invalid @enderror" name="publish_date" value="{{ old('publish_date') }}" required autocomplete="publish_date" autofocus>
+										@error('publish_date')
                                     	<span class="invalid-feedback" role="alert">
                                         	<strong>{{ $message }}</strong>
                                     	</span>
@@ -86,7 +86,7 @@
 							</div>
 							<div class="single-register">
 								<label>{{ __('Language') }}<span>*</span></label>
-								<select class="chosen-select" tabindex="1" style="width:96%;" data-placeholder="Default Sorting" class="@error('language') is-invalid @enderror" name="language" value="{{ old('language') }}" required autocomplete="language" autofocus>
+								<select class="chosen-select" tabindex="1" style="width:96%;" data-placeholder="Default Sorting" class="@error('language') is-invalid @enderror" name="language"required autocomplete="language" autofocus>
 									<option value="English">English</option>
 									<option value="Vietnamese">Vietnamese</option>
 								</select>
@@ -99,7 +99,7 @@
 						</div>
 						<div class="single-register">
 								<label>{{ __('Price') }}<span>*</span></label>
-								<input type="text" placeholder="VND" class="@error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
+								<input type="number" placeholder="VND" class="@error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
 								@error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

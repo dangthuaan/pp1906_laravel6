@@ -24,12 +24,19 @@ class ProductCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required'],
-            'author' => ['required'],
-            'publisher' => ['required'],
-            'publish_date' => ['required'],
-            'language' => ['required'],
-            'price' => ['required', 'integer'],
+            'title' => 'required|unique:products|max:255', //unique: chỉ cho phép 1 giá trị duy nhất, ko có trùng lặp
+            'author' => 'required', //'author' => ['nullable']
+            'publisher' => 'required',
+            'publish_date' => 'required|date',
+            'language' => 'required|string',
+            'price' => 'required|integer',
         ];
     }
+
+    public function messages()
+{
+    return [
+        'title.unique' => 'Name!!!'
+    ];
+}
 }

@@ -32,11 +32,12 @@ class ProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ProductCreateRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(ProductCreateRequest $request)
     {
+        //$data = $request->all(); //lấy dữ liệu tất cả(thừa)
         $data = $request->only([
             'title',
             'author',
@@ -45,15 +46,12 @@ class ProductsController extends Controller
             'language',
             'price',
         ]);
-
-
         try {
             $product = Product::create($data);
         } catch (Exception $e) {
             return back()->with('status', 'Create failed!');
         }
         return redirect('shop/products/' . $product->id)->with('status', 'Create success!');
-        dd();
     }
     
     /**
