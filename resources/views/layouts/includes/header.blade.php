@@ -8,8 +8,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="/theme/img/favicon.png">
     
     <!-- all css here -->
-    <!-- jquery ui themes -->
-    <link rel="stylesheet" href="/theme/css/jquery-ui.css">
     <!-- bootstrap v3.3.6 css -->
     <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
     <!-- animate css -->
@@ -18,6 +16,8 @@
     <link rel="stylesheet" href="/theme/css/meanmenu.min.css">
     <!-- owl.carousel css -->
     <link rel="stylesheet" href="/theme/css/owl.carousel.css">
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="/theme/css/bootstrap-datepicker.min.css">
     <!-- font-awesome css -->
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
     <!-- flexslider.css-->

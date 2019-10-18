@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+//use App\Providers\AppServiceProvider;
 
 class ProductCreateRequest extends FormRequest
 {
@@ -13,8 +15,12 @@ class ProductCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
-    }
+        if (Auth::check()) {
+            return true;
+        }
+
+        return false;
+    }   
 
     /**
      * Get the validation rules that apply to the request.
@@ -36,7 +42,7 @@ class ProductCreateRequest extends FormRequest
     public function messages()
 {
     return [
-        'title.unique' => 'Name!!!'
+        'title.unique' => 'The book title has already been taken!'
     ];
 }
 }

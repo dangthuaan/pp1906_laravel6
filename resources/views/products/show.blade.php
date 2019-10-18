@@ -1,17 +1,26 @@
 @extends('layouts.shop')
 
 @section('content')
+@if (session('status'))
+	<div class="alert alert-danger">
+    	<strong>{{ session('status') }}<strong>
+	</div>
+ @endif
+<form method="POST" action="{{  route('products.destroy', ['product' => $product->id]) }}">
+@csrf
+	<h1>Product show page</h1>
+	<h3>Book id: {{ $product->id }}</h3>
+	<h3>Book title: {{ $product->title }}</h3>
+	<h3>Book author: {{ $product->author }}</h3>
+	<h3>Book publisher: {{ $product->publisher }}</h3>
+	<h3>Book publish date: {{ $product->publish_date }}</h3>
+	<h3>Book language: {{ $product->language }}</h3>
+	<h3>Book price: {{ $product->price }} VNĐ</h3>
+	<h3>Created by user :{{ $product->user ? $product->user->name : '' }}</h3>
 
-<h1>Product show page</h1>
-<h3>Book id: {{ $product->id }}</h3>
-<h3>Book title: {{ $product->title }}</h3>
-<h3>Book author: {{ $product->author }}</h3>
-<h3>Book publisher: {{ $product->publisher }}</h3>
-<h3>Book publish date: {{ $product->publish_date }}</h3>
-<h3>Book language: {{ $product->language }}</h3>
-<h3>Book price: {{ $product->price }}</h3>
+	<button type="submit" style="background-color: red; color: white;">{{ __('DELETE BOOK') }}</button>
 
-<h3></h3>
+</form>
 
 <body class="product-details">
 <!--[if lt IE 8]>

@@ -30,3 +30,9 @@ Route::get('shop/products/create', 'ProductsController@create')->name('products.
 Route::post('shop/products', 'ProductsController@store')->name('products.store');
 
 Route::get('shop/products/{product}', 'ProductsController@show')->name('products.show');
+
+Route::get('shop/products/{product}/edit', 'ProductsController@edit')->name('products.edit');
+
+Route::post('shop/products/{product}', 'ProductsController@update')->name('products.update');
+
+Route::post('shop/products/{product}', 'ProductsController@destroy')->name('products.destroy');
