@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,7 +25,17 @@ Route::get('/shop', function () {
     return view('shop_home');
 });
 
-Route::get('shop/store', 'StoreController@index')->name('products.product_store');
+Route::get('shop/products', 'ProductsController@index')->name('products.index');
 
-Route::get('shop/store/products/{product}', 'ProductController@show')
-    ->name('products.product_details');
+Route::get('shop/products/create', 'ProductsController@create')->name('products.create');
+
+Route::post('shop/products', 'ProductsController@store')->name('products.store');
+
+Route::get('shop/products/{product}', 'ProductsController@show')->name('products.show');
+
+Route::get('shop/products/{product}/edit', 'ProductsController@edit')->name('products.edit');
+
+Route::put('shop/products/{product}', 'ProductsController@update')->name('products.update');
+
+Route::delete('shop/products/{product}', 'ProductsController@destroy')->name('products.destroy');
+

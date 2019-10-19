@@ -1,14 +1,15 @@
 @extends('layouts.shop')
 
 @section('content')
-
-<h1>Product show page</h1>
-<h3>Name: {{ $product->name }}</h3>
-<h3>Content: {{ $product->content }}</h3>
-<h3>Quantity: {{ $product->quantity }}</h3>
-<h3>Price: {{ $product->price }}</h3>
-
-
+@if (session('statusFailed'))
+    <div class="alert alert-danger">
+        <strong>{{ session('statusFailed') }}<strong>
+    </div>
+@elseif (session('statusSuccess'))
+    <div class="alert alert-success">
+        <strong>{{ session('statusSuccess') }}<strong>
+    </div>
+@endif
 <body class="shop">
 <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
