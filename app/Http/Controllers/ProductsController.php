@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductCreateRequest;
+use Illuminate\Support\Facades\Log;
 use App\Models\Product;
-//use App\Providers\AppServiceProvider;
 use Exception;
+use Auth;
 use Carbon\Carbon;
 
 
@@ -48,20 +49,20 @@ class ProductsController extends Controller
             'language',
             'price',
         ]);
-
-        $data['user_id'] = auth()->id();
+        //$data['user_id'] = auth()->id();
+        $data['user_id'] = Auth::id();
 
         $data['publish_date'] = Carbon::parse($request->publish_date)->format('Y-m-d');
-        
+
         try {
             $product = Product::create($data);
         } catch (Exception $e) {
-            \Log::error($e);
-            return back()->with('status', 'Create failed!');
+            Log::error($e);
+            return back()->with('statusFailed', 'Create failed!');
         }
-        return redirect('shop/products/' . $product->id)->with('status', 'Create success!');
+        return redirect('shop/products/' . $product->id)->with('statusSuccess', 'Create success!');
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -70,7 +71,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
 
         $data = ['product' => $product];
 
@@ -85,7 +86,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
+        //$product = Product::find($id);
+        $product = Product::findOrFail($id);
 
         $data = ['product' => $product];
 
@@ -110,14 +112,15 @@ class ProductsController extends Controller
             'price',
         ]);
 
+        $product = Product::findOrFail($id);
+
         try {
-            $product = Product::find($id);
             $product->update($data);
         } catch (Exception $e) {
-            return back()->with('status', 'Update failed!');
+            \Log::error($e);
+            return back()->with('statusFailed', 'Update failed!');
         }
-
-        return redirect('shop/products/' . $id)->with('status', 'Update success!');
+        return redirect('shop/products/' . $product->id)->with('statusSuccess', 'Update success!');
     }
 
     /**
@@ -128,12 +131,13 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
+        $product = Product::findOrFail($id);
+
         try {
             Product::destroy($id);
         } catch (Exception $e) {
-            return back()->with('status', 'Delete failed!');
+            return back()->with('statusFailed', 'Delete failed!');
         }
-
-        return redirect('shop/products')->with('status', 'Product deleted!');
+        return redirect('shop/products')->with('statusFailed', 'Product deleted!');
     }
 }

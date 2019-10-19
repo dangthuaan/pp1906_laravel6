@@ -18,7 +18,7 @@ class AddUseridToProductsTable extends Migration
                 $table->bigInteger('user_id')->after('id');
             });
         }
-    }   
+    }
 
     /**
      * Reverse the migrations.

@@ -1,10 +1,14 @@
 @extends('layouts.shop')
 
 @section('content')
-@if (session('status'))
-	<div class="alert alert-danger">
-    	<strong>{{ session('status') }}<strong>
-	</div>
+@if (session('statusFailed'))
+    <div class="alert alert-danger">
+        <strong>{{ session('statusFailed') }}<strong>
+    </div>
+@elseif (session('statusSuccess'))
+    <div class="alert alert-success">
+        <strong>{{ session('statusSuccess') }}<strong>
+    </div>
 @endif
 <body class="shop">
 <!--[if lt IE 8]>

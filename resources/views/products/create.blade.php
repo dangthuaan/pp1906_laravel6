@@ -3,11 +3,15 @@
 	@section('content')
 	<!-- breadcrumbs-area-start -->
 	<div class="breadcrumbs-area mb-70">
-		@if (session('status'))
-        	<div class="alert alert-danger">
-            	<strong>{{ session('status') }}<strong>
-        	</div>
-    	@endif
+	@if (session('statusFailed'))
+		<div class="alert alert-danger">
+			<strong>{{ session('statusFailed') }}<strong>
+		</div>
+	@elseif (session('statusSuccess'))
+		<div class="alert alert-success">
+			<strong>{{ session('statusSuccess') }}<strong>
+		</div>
+	@endif
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">

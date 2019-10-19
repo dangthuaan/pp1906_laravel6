@@ -3,17 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Providers\AppServiceProvider;
 
 class Product extends Model
 {
     protected $fillable = [
     	'user_id',
     	'title',
-    	'author', 
-    	'publisher', 
-    	'publish_date', 
-    	'language', 
+    	'author',
+    	'publisher',
+    	'publish_date',
+    	'language',
     	'price',
     ];
 
@@ -21,8 +20,4 @@ class Product extends Model
     {
         return $this->belongsTo('App\User');
     }
-
-    //protected $date = ['publish_date'];
-
-
 }

@@ -4,7 +4,6 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-//use App\Providers\AppServiceProvider;
 
 class ProductCreateRequest extends FormRequest
 {
@@ -18,9 +17,8 @@ class ProductCreateRequest extends FormRequest
         if (Auth::check()) {
             return true;
         }
-
         return false;
-    }   
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -30,8 +28,8 @@ class ProductCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:products|max:255', //unique: chỉ cho phép 1 giá trị duy nhất, ko có trùng lặp
-            'author' => 'required', //'author' => ['nullable']
+            'title' => 'required|unique:products|max:255',
+            'author' => 'required',
             'publisher' => 'required',
             'publish_date' => 'required|date',
             'language' => 'required|string',
@@ -40,9 +38,9 @@ class ProductCreateRequest extends FormRequest
     }
 
     public function messages()
-{
-    return [
-        'title.unique' => 'The book title has already been taken!'
-    ];
-}
+    {
+        return [
+            'title.unique' => 'The book title has already been taken!'
+        ];
+    }
 }
