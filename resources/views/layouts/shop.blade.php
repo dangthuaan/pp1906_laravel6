@@ -4,6 +4,7 @@
 
 	<body>
 		@yield('content')
+		@yield('css')
 
 		@include('layouts.includes.footer')
 
