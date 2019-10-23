@@ -440,10 +440,11 @@
                                 </ul>
                             </div>
                         </div>
+                        
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                             <div class="product-info-main">
                                 <div class="page-title">
-                                    <h1>Savvy Shoulder Tote</h1>
+                                    <h1>{{ $product->title }}</h1>
                                 </div>
                                 <div class="product-info-stock-sku">
                                     <span>In stock</span>
@@ -467,7 +468,7 @@
                                 </div>
                                 <div class="product-info-price">
                                     <div class="price-final">
-                                        <span>$34.00</span>
+                                        <span>{{ $product->price}} VNĐ</span>
                                         <span class="old-price">$40.00</span>
                                     </div>
                                 </div>
@@ -491,6 +492,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 <!-- product-main-area-end -->
@@ -506,10 +508,10 @@
                             <div class="valu">
                               <p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare, it's ideal for athletes with places to go.</p>
                               <ul>
-                                <li><i class="fa fa-circle"></i>Dual top handles.</li>
-                                <li><i class="fa fa-circle"></i>Adjustable shoulder strap.</li>
-                                <li><i class="fa fa-circle"></i>Full-length zipper.</li>
-                                <li><i class="fa fa-circle"></i>L 29" x W 13" x H 11".</li>
+                                <li><i class="fa fa-circle"></i>{{$product->author}}</li>
+                                <li><i class="fa fa-circle"></i>{{ $product->publisher}}</li>
+                                <li><i class="fa fa-circle"></i>{{$product->publish_date}}</li>
+                                <li><i class="fa fa-circle"></i>{{$product->language}}</li>
                               </ul>
                             </div>
                         </div>
